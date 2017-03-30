@@ -1,0 +1,163 @@
+/***************************/
+/*        Card CSS         */
+/***************************/
+.fragment {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #555;
+  display: block;
+  box-sizing: border-box;
+  min-height: 120px;
+  text-decoration: none;
+}
+.fragment:hover {
+	box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+}
+.fragment img { 
+  float: top;
+  margin-right: 10px;
+}
+.fragment *:not(img) {
+  text-align: left;
+}
+.fragment h4 {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+  color: #369;
+}
+.fragment p {
+  font-size: 12px;
+  font-family: tahoma;
+  color: #000;
+}
+
+div.curated {
+    background-color: #18BC9C;
+}
+div.rating {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 35px;
+}
+div.rating img.rating { 
+    float: right;
+    width: 20px;
+    /*background-color: #fff700;*/
+    border-radius: 20px;
+	margin-top: 3px;
+}
+h4.curated {
+	float: left;
+    font-size: 14px;
+}
+
+/***************************/
+/*      By Class CSS       */
+/***************************/
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+.div-uploader {
+	height: 80px;
+}
+
+.file-uploader {
+	padding-left: 20px;
+}
+
+.hidden {
+  display: none;
+}
+.shown-flex {
+  display: inline-flex !important;
+}
+
+.image-upload > input {
+  display: none;
+}
+.image-upload img {
+  width: 80px;
+  cursor: pointer;
+}
+.intro-text {
+	padding-bottom: 10px;
+}
+
+.modal {
+	padding-right: 5%;
+}
+
+.result-thumbnais {
+  width: 80%;
+}
+
+/***************************/
+/*       By Tag CSS        */
+/***************************/
+
+button#btn-menu {
+	margin-right: 8%;
+}
+
+div#playSoundDOM {
+	margin: 10px;
+	min-height: 50px;
+}
+div#playSoundDOM * {
+	margin: 0;
+}
+
+header .container {
+	padding: 20px 0;
+}
+
+/*section {
+    background: url('background.png');
+}*/
+
+/***************************/
+/*      Flotchart CSS      */
+/***************************/
+
+.axisLabel {
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+}
+.flot-y1-axis {
+	width: 20px;
+    left: -15px !important;
+}
+.xaxisLabel {
+    bottom: 3px;
+    left: 0;
+    right: 0;
+	margin: -40px 0;
+}
+.yaxisLabel {
+	position: relative;
+    left: -45px;
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform:  rotate(-90deg);
+    transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+#plotholder {
+	padding: 20px;
+}
+#plotholder #placeholder {
+	position: relative;
+    top: -20px;
+    left: 20px;
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+	<!--<meta name="mobile-web-app-capable" content="yes">-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- Customized CSS -->
+	<link href="/customize.css" rel="stylesheet" type="text/css">
+
+    <title>Whaddat?</title>
+    <body id="page-top" class="index">
+      <!-- Navigation -->
+      <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+          <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header page-scroll">
+                  <button id="btn-menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                  </button>
+                  <a class="navbar-brand" href="#page-top">Whaddat?</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="hidden">
+                          <a href="#page-top"></a>
+                      </li>
+                      <li class="page-scroll" onclick="navigate(this)">
+                          <a href="">My Profile</a>
+                      </li>
+                      <li class="page-scroll" onclick="navigate(this)">
+                          <a href="#statistics">Statistics</a>
+                      </li>
+                      <li class="page-scroll" onclick="navigate(this)">
+                          <a href="">Moderator</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+      </nav>
+
+  <!-- Header -->
+   <header>
+	<section>
+       <div class="container" id="maincontent" tabindex="-1">
+           <div class="row">
+               <div class="col-lg-12">
+                   <img id="blah" class="img-responsive" src="newProfile.png" alt="" style="height:256px;width:256px;border-radius:50%;">
+                   <button type="button" class = "btn btn-default" id="uploadBtn" style="display:none;">Capture</button>
+
+                   <!-- <input id="playSoundDOM" onclick='playSound()' type='button' value='🔊 Play' style="display:none;" /> -->
+                   <div class="intro-text">
+					   <div id="playSoundDOM">
+					      <span class="name shown-flex">Whaddat?</span>
+						  <img class='hidden' src='voiceOver.png' onclick='playSound()' style='width:50px;'/>
+					   </div>
+					   <div class="div-uploader">
+					       <p><b>Capture or upload an object</b></p>
+						   <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" class="file-uploader center" onchange="readURL(this)">
+					   </div>
+                   </div>
+                   <div class="intro-text">
+                       <hr class="star-light">
+                       <span class="skills">Every moment is a learning moment</span>
+                   </div>
+               </div>
+           </div>
+       </div>
+	</section>
+   </header>
+
+   <!-- Portfolio Grid Section -->
+   <section id="portfolio">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-12 text-center">
+                   <h2>Guides</h2>
+                   <hr class="star-primary">
+               </div>
+           </div>
+           <div class="row guide-items">
+				<div class="col-sm-4 portfolio-item divCat">
+					<a class="fragment" href="/catHtml" target="_blank">
+						<div class="rating curated">
+							<span><h4 class="curated">Curated</h4></span>
+							<img class="img-responsive rating" src="dislike.png">
+							<img class="img-responsive rating" src="like.png">
+						</div>
+						<img class="img-responsive" alt="preview" width="100%;" src="Thumbnail.png">
+						<h4>Colourful Cats</h4>
+						<p></p>
+					</a>
+				</div>
+				<div class="col-sm-4 portfolio-item divCat">
+					<a class="fragment" href="https://www.youtube.com/watch?v=LjMffHG1V_Q" target="_blank">
+						<div class="rating curated">
+							<span><h4 class="curated">Curated</h4></span>
+							<img class="img-responsive rating" src="dislike.png">
+							<img class="img-responsive rating" src="like.png">
+						</div>
+						<img class="img-responsive" alt="preview" width="100%;" src="Thumbnail-Cat-Come-Back.jpg">
+						<h4>The Cat came back</h4>
+						<p></p>
+					</a>
+				</div>
+                <!--<a href="/catHtml" class="portfolio-link" >
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="" class="img-responsive" alt="Cabin">
+                </a>-->
+           </div>
+       </div>
+   </section>
+
+	<!-- Modal Dialog -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content statistics">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Browsing Statistics</h4>
+				</div>
+				<div class="modal-body">
+					<div id="plotholder">
+						<div id="placeholder" style="width:500px; height:300px;">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<div class="modal-content warning">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" />
+				</div>
+				<div class="modal-body">
+					<p class="msg" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+        <!--The above library(/socket.io/socket.io.js) will be generated by socket.io module of server -->
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src='https://code.responsivevoice.org/responsivevoice.js'></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay_progress.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.js"></script>
+
+		<script type="text/javascript" src="customize.bootstrap.js"></script>
+		<script type="text/javascript" src="customize.flot.js"></script>
+
+        <script type="text/javascript">
+
+		$(document).ready(function(){
+			var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+			// Windows Phone must come first because its UA also contains "Android"
+			// iOS detection from: http://stackoverflow.com/a/9039885/177710
+			if (/windows phone/i.test(userAgent)) {
+				console.log("OS: Windows Phone");
+			} else if (/android/i.test(userAgent)) {
+				console.log("OS: Android");
+			} else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+				console.log("OS: iOS");
+				var msg = new SpeechSynthesisUtterance();
+			} else {
+				console.log("OS: unknown");
+			}
+		});
+		</script>
+
+		<script type="text/javascript">
+		$('#portfolio').hide();
+		$('.divCat').hide();
+
+        $( "#fileToUpload" ).change(function() {
+          //automatically upload the image
+          $( "#uploadBtn" ).click();
+          $( "#fileToUpload" ).hide();
+          });
+
+                var socket = io.connect("/");
+                var labelOfImage = null;
+
+                function readURL(input) {
+                  if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+
+                      reader.onload = function (e) {
+                          $('#blah').attr({'src': e.target.result});
+                      };
+
+                      reader.readAsDataURL(input.files[0]);
+                  }
+                }
+
+                function playSound() {
+                  responsiveVoice.speak(labelOfImage);
+                }
+                /*Initializing the connection with the server via websockets */
+                socket.on("label",function(jsonObj){
+                    /*
+                        When server sends data to the client it will trigger "label" event on the client side , by
+                        using socket.on("label") , one can listen for the ,label event and associate a callback to
+                        be executed . The Callback function gets the data sent from the server
+                    */
+					// Hide all curated div
+					$('.divCat').hide();
+
+                    console.log("Message from the server arrived");
+                    //label = JSON.stringify(label, undefined, 2);
+                    console.log(jsonObj.imageLabel); /*converting the data into JS object */
+                    labelOfImage = jsonObj.imageLabel;
+                    $('.name')[0].innerHTML = "";//remove the title and replace with label
+                    $('.name').append('<div >'+jsonObj.imageLabel+'</div>');
+                    //display sound icon
+                    $("#playSoundDOM img").removeClass('hidden').addClass('shown-flex');
+                    playSound();
+
+					if(jsonObj.imageLabel.toUpperCase()=='CAT' || jsonObj.imageLabel.toUpperCase()=='CATS') {
+						$('.divCat').show();
+					}
+
+                    for (var i = 0; i < jsonObj.articles.length; i++) {
+						var fragment = $('<a/>').addClass('fragment').attr({'href':jsonObj.articles[i].urlLink}).attr('target','_blank');
+						var header = $('<div/>').addClass('rating');
+						// simulate curated data
+						/*if(i==0) {
+							header.addClass('curated');
+							header.append($('<span/>').append($('<h4/>').addClass('curated').html('Curated')));
+						}*/
+						header.append($('<img/>').addClass('img-responsive rating').attr('src','dislike.png'));
+						header.append($('<img/>').addClass('img-responsive rating').attr('src','like.png'));
+
+						/*$(fragment).find('*').not('div.rating').not('div.rating *').on('click', function(evnt){
+							console.log(evnt);
+							console.log(this);
+							console.log(this.parent());
+							console.log($(this).parent('a.fragment').find('div.rating img.rating'));
+							$(this).parent('a.fragment').find('div.rating img.rating').show();
+						});*/
+
+						fragment.append(header);
+						fragment.append($('<img/>').addClass('img-responsive').attr({'alt':'preview', 'width':'100%;', 'src':jsonObj.articles[i].thumbnails.url}));
+						fragment.append($('<h4/>').html(jsonObj.articles[i].title));
+						fragment.append($('<p/>').html(jsonObj.articles[i].description));
+
+						var domElement = $('<div/>').addClass('col-sm-4 portfolio-item');
+						$(domElement).append(fragment);
+						$('.guide-items')[0].append(domElement[0]);
+
+                      /*var domElement = $("<div class='col-sm-4 portfolio-item'><a href=" + jsonObj.articles[i].urlLink + " target='_blank' class='portfolio-link' data-toggle='modal'><div class='caption'>" +
+                      "<div class='caption-content'><i class='fa fa-search-plus fa-3x'></i></div></div><img src="
+                      + jsonObj.articles[i].thumbnails.url
+                      + " class='img-responsive center result-thumbnais'/><p>" + jsonObj.articles[i].title +  "</p></a></div>");
+                      $('.guide-items')[0].append(domElement[0]);*/
+                    };
+
+					// Hard-code
+					$($('div.rating img.rating').get(3)).css({'background-color':'#fff700'});
+
+					//$('div.rating img.rating').hide();
+					$('div.rating img.rating').show();
+					$('#fileToUpload').show();
+					$('.intro-text:first').LoadingOverlay("hide");
+					$('#portfolio').show();
+
+                });
+				/*$('a.fragment *:not(div.rating):not(div.rating *)').click(function(evnt){
+					console.log(evnt);
+					console.log(this);
+					console.log(this.parent());
+					console.log($(this).parent('a.fragment').find('div.rating img.rating'));
+					$(this).parent('a.fragment').find('div.rating img.rating').show();
+				});*/
+
+                $(function(){
+                    $('#uploadBtn').click(function(){ /*listening to the button click using Jquery listener*/
+						$('.guide-items .portfolio-item:not(.divCat)').remove();
+
+						$('.intro-text:first').LoadingOverlay("show");
+						$('#portfolio').hide();
+
+                      //Get the first (and only one) file element
+                      //that is included in the original event
+                      var file = $("input[type=file]")[0].files[0];
+                          reader = new FileReader();
+                      //When the file has been read...
+                      reader.onload = function(evt){
+                          //Because of how the file was read,
+                          //evt.target.result contains the image in base64 format
+                          //Nothing special, just creates an img element
+                          //and appends it to the DOM so my UI shows
+                          //that I posted an image.
+                          //send the image via Socket.io
+                          var jsonObj = {
+                            imageName: file.name,
+                            imageData: evt.target.result
+                          }
+
+                          socket.emit('imgToDetect', JSON.stringify(jsonObj));
+                      };
+                      //And now, read the image and base64
+                      reader.readAsDataURL(file);
+
+                      //Emptying the text box value using jquery
+                      $('#fileToUpload').val('');
+
+                        return false;
+                    });
+                });
+
+        </script>
+
+    </body>
+  </head>
+</html>
